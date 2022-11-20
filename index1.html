@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw10-1</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial.html">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+
+    <script>
+      let list = document.querySelectorAll("li");
+      list.forEach((item) => {
+        if (item.innerHTML.match("://")) {
+          item.querySelector("a").style.color = "orange";
+          item.querySelector("a").style.textDecoration = "none";
+          item.style.color = "orange";
+          if (item.querySelector("a").href.match("http://internal.com")) {
+            item.querySelector("a").style.color = "blue";
+            item.querySelector("a").style.textDecoration = "none";
+            item.style.color = "blue";
+          }
+        } else {
+          item.querySelector("a").style.color = "blue";
+          item.querySelector("a").style.textDecoration = "none";
+          item.style.color = "blue";
+        }
+      });
+    </script>
+  </body>
+</html>

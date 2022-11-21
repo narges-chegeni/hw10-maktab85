@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw10-3</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li>test</li>
+    </ul>
+    <script>
+      function addItem() {
+        let list = document.getElementById("list");
+        for (let i = 0; i <= 5; i++) {
+          let item = document.createElement("li");
+          let data = document.createTextNode(
+            prompt(
+              "please enter a list item:\n(if list items finished please epress Esc or do not enter anything for input)"
+            )
+          );
+          item.appendChild(data);
+          console.log(data.nodeValue);
+          if (data.nodeValue === "" || data.nodeValue === "null") {
+            break;
+          }
+          list.appendChild(item);
+        }
+      }
+      addItem();
+      console.log(list);
+    </script>
+  </body>
+</html>

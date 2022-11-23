@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw10-8</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .item {
+        width: 60%;
+        background-color: aquamarine;
+        margin: 2rem;
+        padding: 0.5rem;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+        perspiciatis cumque architecto quidem fuga placeat aliquid ratione
+        ducimus magnam totam deserunt ad quia deleniti, soluta facilis pariatur
+        ex qui? Aut.
+      </p>
+    </div>
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+        perspiciatis cumque architecto quidem fuga placeat aliquid ratione
+        ducimus magnam totam deserunt ad quia deleniti, soluta facilis pariatur
+        ex qui? Aut.
+      </p>
+    </div>
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+        perspiciatis cumque architecto quidem fuga placeat aliquid ratione
+        ducimus magnam totam deserunt ad quia deleniti, soluta facilis pariatur
+        ex qui? Aut.
+      </p>
+    </div>
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+        perspiciatis cumque architecto quidem fuga placeat aliquid ratione
+        ducimus magnam totam deserunt ad quia deleniti, soluta facilis pariatur
+        ex qui? Aut.
+      </p>
+    </div>
+    <script>
+      let deletes = document.querySelectorAll(".delete");
+      deletes.forEach((item) =>
+        item.addEventListener("click", function (e) {
+          e.target.parentElement.parentElement.remove();
+        })
+      );
+    </script>
+  </body>
+</html>

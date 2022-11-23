@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw10-4</title>
+  </head>
+  <body>
+    <ul id="container"></ul>
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            apple_tree: {},
+            magnolia: {},
+          },
+        },
+      };
+      let container = document.getElementById("container");
+      function createTree(container, data) {
+        let dataArray = Object.entries(data);
+        for (let i = 0; i < dataArray.length; i++) {
+          let list = document.createElement("ul");
+
+          let item = document.createElement("li");
+          item.appendChild(document.createTextNode(dataArray[i][0]));
+          list.appendChild(item);
+          container.appendChild(list);
+          if (dataArray[i][1]) {
+            createTree(list, dataArray[i][1]);
+          }
+        }
+      }
+
+      createTree(container, data); // creates the tree in the container
+    </script>
+  </body>
+</html>

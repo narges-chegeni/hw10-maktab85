@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw10-9</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .item {
+        width: 60%;
+        background-color: aquamarine;
+        margin: 2rem;
+        padding: 0.5rem;
+        position: relative;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .tool_tip {
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        background-color: beige;
+        top: -6rem;
+        left: 10rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+      <div class="tool_tip">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit blanditiis
+        perferendis maxime veritatis suscipit maiores quia enim voluptate
+        repellendus error.
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+      <div class="tool_tip">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit blanditiis
+        perferendis maxime veritatis suscipit maiores quia enim voluptate
+        repellendus error.
+      </div>
+    </div>
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+      <div class="tool_tip">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit blanditiis
+        perferendis maxime veritatis suscipit maiores quia enim voluptate
+        repellendus error.
+      </div>
+    </div>
+    <div class="item">
+      <div class="header">
+        <div><strong>horse</strong></div>
+        <div class="delete" style="color: red">[X]</div>
+      </div>
+      <div class="tool_tip">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit blanditiis
+        perferendis maxime veritatis suscipit maiores quia enim voluptate
+        repellendus error.
+      </div>
+    </div>
+    <script>
+      let items = document.querySelectorAll(".item");
+      items.forEach((item) =>
+        item.addEventListener("mouseover", function (e) {
+          e.currentTarget.querySelector(".tool_tip").style.display = "block";
+          console.log(item.offsetTop);
+          console.log(e.currentTarget.querySelector(".tool_tip").offsetHeight);
+          if (
+            item.offsetTop <
+            e.currentTarget.querySelector(".tool_tip").offsetHeight
+          ) {
+            e.currentTarget.querySelector(".tool_tip").style.top = "1rem";
+          }
+        })
+      );
+      items.forEach((item) =>
+        item.addEventListener("mouseout", function (e) {
+          e.currentTarget.querySelector(".tool_tip").style.display = "none";
+        })
+      );
+    </script>
+  </body>
+</html>

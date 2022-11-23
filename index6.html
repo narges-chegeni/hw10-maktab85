@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw10-6</title>
+  </head>
+  <body>
+    <input type="button" id="hider" value="Click to hide the text" />
+    <div id="text">Text</div>
+    <script>
+      let button = document.getElementById("hider");
+      let text = document.getElementById("text");
+      button.addEventListener("click", hider);
+      function hider() {
+        text.style.display = "none";
+        setTimeout(() => (button.style.display = "none"), 1000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw10-5</title>
+  </head>
+  <body>
+    <ol id="elem1">
+      <li>Hello</li>
+      <li>World</li>
+    </ol>
+    <ol id="elem2">
+      <li>Hello</li>
+      <li>World</li>
+    </ol>
+    <ol id="elem3">
+      <li>Hello</li>
+      <li>World</li>
+    </ol>
+    <script>
+      let elem1 = document.getElementById("elem1");
+      let elem2 = document.getElementById("elem2");
+      let elem3 = document.getElementById("elem3");
+      function clear(elem) {
+        while (elem.firstChild) {
+          elem.removeChild(elem.firstChild);
+        }
+      }
+      clear(elem1); // clears the list
+      clear(elem2);
+    </script>
+  </body>
+</html>
